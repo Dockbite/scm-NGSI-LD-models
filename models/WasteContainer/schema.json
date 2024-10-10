@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$schemaVersion": "0.4.0",
   "modelTags": "",
-  "$id": "https://scm-ngsi-ld.github.io/smart-data-models/models/WasteContainer/schema.json",
+  "$id": "https://scm-ngsi-ld.github.io/test-smart-data-models/models/WasteContainer/schema.json",
   "title": " - Waste Management / Waste Container",
   "description": "A waste container",
   "type": "object",
@@ -160,18 +160,14 @@
           "type": "string",
           "description": "Property. Identifier (or name) of the isle where the container is placed. This attribute should be used when entities of type `WasteContainerIsle` are not being modelled specifically. Otherwise, `refWasteContainerIsle` should be used"
         },
-        "status": {
+        "scmStatus": {
           "type": "string",
           "enum": [
-            "ok",
-            "lidOpen",
-            "dropped",
-            "moved",
-            "vandalized",
-            "burning",
-            "unknown"
+            "available",
+            "error",
+            "no-contact"
           ],
-          "description": "Property. Container's status from the point of view of safety. Enum:'ok , lidOpen , dropped , moved , vandalized , burning , unknown'.  -   `ok`. Container is where it must be and stands properly. `lidOpen`. Container's lid has been opened and not closed after a certain amount of time. `dropped`. Container has been dropped for some reason. `moved`. Container has been moved from its regular position and has not come back. `vandalized`. Container has been damaged or destroyed due to vandalism. `burning`. Container is burning and an immediate action has to be taken. `unknown`. The status of the container is not known to the system"
+          "description": "Property. Container''s status from the Smart City Manager Platform. Enum:''available, error, no-contact''.  -   `available`. Container has no issues and is actively communicating. `error`. Container has one or more issues, might still be communicating. `no-contact`. Container has not communicated in a while."
         },
         "refWasteContainerModel": {
           "anyOf": [

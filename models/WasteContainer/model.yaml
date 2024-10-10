@@ -586,16 +586,12 @@ WasteContainer:
       type: string
       x-ngsi:
         type: Property
-    status:
-      description: 'Container''s status from the point of view of safety. Enum:''ok , lidOpen , dropped , moved , vandalized , burning , unknown''.  -   `ok`. Container is where it must be and stands properly. `lidOpen`. Container''s lid has been opened and not closed after a certain amount of time. `dropped`. Container has been dropped for some reason. `moved`. Container has been moved from its regular position and has not come back. `vandalized`. Container has been damaged or destroyed due to vandalism. `burning`. Container is burning and an immediate action has to be taken. `unknown`. The status of the container is not known to the system'
+    scmStatus:
+      description: 'Container''s status from the Smart City Manager Platform. Enum:''available, error, no-contact''.  -   `available`. Container has no issues and is actively communicating. `error`. Container has one or more issues, might still be communicating. `no-contact`. Container has not communicated in a while.'
       enum:
-        - ok
-        - lidOpen
-        - dropped
-        - moved
-        - vandalized
-        - burning
-        - unknown
+        - available
+        - error
+        - no-contact
       type: string
       x-ngsi:
         type: Property
@@ -671,6 +667,6 @@ WasteContainer:
   x-derived-from: ""
   x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.WasteManagement/blob/master/WasteContainer/LICENSE.md
-  x-model-schema: https://scm-ngsi-ld.github.io/smart-data-models/models/WasteContainer/schema.json
+  x-model-schema: https://scm-ngsi-ld.github.io/test-smart-data-models/models/WasteContainer/schema.json
   x-model-tags: ""
   x-version: 0.3.0
